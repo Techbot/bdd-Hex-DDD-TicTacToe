@@ -37,12 +37,12 @@ class StartGameHandler
 
     public function handle($command)
     {
-        $gameId = $this->uuidFactory->fromString($command->gameId);
-        $playerName = $command->playerName;
+        $gameId = $command->gameId;
 
+
+        $playerName = $command->playerName;
         $game = $this->gameFactory->create($gameId, $playerName);
         $game->start($this->moveGenerator);
-
         $this->gameRepository->add($game);
     }
 }

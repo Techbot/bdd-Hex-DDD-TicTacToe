@@ -6,7 +6,6 @@ class StartGameCommand
 {
 
     /**
-     * @var string
      */
     public $gameId;
 
